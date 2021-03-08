@@ -15,15 +15,6 @@ FROM Company C
 GROUP BY C.company_code, C.founder
 ORDER BY C.company_code
 
-
-/*
--- Group By 기준 컬럼 여러개
-https://inf.run/sVX5
-
-그룹화의 기준이 되는 컬럼은 반드시 SELECT에 적어줘야한다
-역으로, 그룹화를 할때, SELECT에 적어주는 컬럼은 GROPU BY에 적어준다
-*/
-
 /*
 Employee Table만 사용하면 예외를 찾지못하므로 주어진 테이블을 다 활용한다
 이 문제는 정답은 맞게 나옴
