@@ -4,7 +4,6 @@ from Person
 group by Email
 having count(ID) >= 2
 
-
 -- sol2
 /*
 select Email
