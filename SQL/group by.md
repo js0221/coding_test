@@ -1,6 +1,6 @@
 # Group By
-1. SELECT는 테이블을 조회만 하는 것이다. 새로 만드는 것이 아님
-2. Group By에 넣은 그 속성을 일단 묶는다.
+1. SELECT는 테이블을 조회만 하는 것이다. 새로 만드는 것이 아님.
+2. Group By에 넣은 그 속성끼리 같은 것을 일단 묶는다.
      ```sql
      select *
      group by 속성1
@@ -22,3 +22,23 @@
      ```
 
 * Group By 기준 컬럼 여러개 참고 : https://inf.run/sVX5
+
+# Having
+* group by를 사용한 결과물을 가지고 연산하고 싶을 때 사용
+```sql
+select Email
+from Person
+group by Email
+having count(ID) >= 2
+```
+```sql
+select Email
+      ,Count(Id) AS cnt
+from Person
+group by Email
+```
+|Email  |cnt    |
+|-------|-------|
+|a@b.com|2      |
+|c@d.com|1      |
+
