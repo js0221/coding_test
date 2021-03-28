@@ -15,7 +15,7 @@ WHERE months * salary = (SELECT MAX(months*salary) FROM employee)
 108064 Lillian 
 108064 Evelyn 
 */
-SELECT months* salary AS earnings
+SELECT months * salary AS earnings
      , count(*)
 FROM employee
 WHERE months * salary = (SELECT MAX(months*salary) FROM employee)
