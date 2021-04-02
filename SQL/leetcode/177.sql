@@ -1,4 +1,4 @@
--- 풀이 1: CASE문
+-- 풀이 1: CASE문, 서브쿼리
 /* 
 Tip. SELECT문으로 꺼내서 작성한 다음 FUNCTION에 넣기
 
