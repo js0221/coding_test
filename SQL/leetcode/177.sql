@@ -50,3 +50,36 @@ END
 
 
 -- 풀이 3: LIMIT, OFFSET
+/* 
+<LIMIT>
+LIMIT 가져올 개수
+LIMIT START(시작은 0번부터), 가져올 개수
+
+LIMIT N(0부터 시작이니까 1번부터 따지면 N+1번임), M개
+== LIMIT N, OFFSET M
+               
+<사용자정의함수 - DECLARE, SET>
+함수 선언시 사용하는 변수를 바로 연산에 사용할 수 없다.
+BEGIN 안에 변수를 선언해야 한다 (DECLARE, SET)
+*/
+CREATE FUNCTION getNthHighestSalary(N INT)
+RETURNS INT
+BEGIN
+  DECLARE A INT;
+  SET A = N-1;
+  /*
+  > DECLARE A를 안할 경우
+  SET N= N-1
+  LIMIT N, 1
+  
+  > OFFSET 사용할 경우
+  LIMIT 1 OFFSET N
+  */
+  RETURN (
+          SELECT DISTINCT Salary
+          FROM Employee
+          ORDER BY Salary DESC
+          LIMIT A, 1
+  );
+END
+
