@@ -82,4 +82,3 @@ BEGIN
           LIMIT A, 1
   );
 END
-
