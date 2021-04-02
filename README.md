@@ -6,7 +6,7 @@
 # Contents
 * ### Algorithm
   * 강의학습
-    * 알고리즘 : [어서와! 자료구조와 알고리즘은 처음이지?](https://github.com/js0221/test/wiki/DS&A_어서와!-자료구조와-알고리즘은-처음이지%3F)
+    * 자료구조 & 알고리즘 : [어서와! 자료구조와 알고리즘은 처음이지?](https://github.com/js0221/test/wiki/DS&A_어서와!-자료구조와-알고리즘은-처음이지%3F)
     * 문제풀이 : [파이썬을 무기로, 코딩테스트 광탈을 면하자!](https://github.com/js0221/test/wiki/이시윤_%5BPython-문제풀이%5D-파이썬을-무기로,-코딩테스트-광탈을-면하자!)
 
 * ### SQL
