@@ -30,7 +30,7 @@ def solution(s):
   
   
   
-def solution(s):
+def solution2(s):
     answer = len(s)
     
     for size in range(1, len(s) // 2 + 1):           # 자르는 길이의 단위를 1부터 절반까지만 사용하겠다
