@@ -30,24 +30,26 @@ def solution(s):
   
   
   
-def solution2(s):
+def solution(s):
     answer = len(s)
-
-    #------------------------------------------------------------------------------
-    for size in range(1, len(s) // 2 + 1):        # size : 잘라야 하는 길이
-        count, compress = 1, 0
+    
+    for size in range(1, len(s) // 2 + 1):           # 자르는 길이의 단위를 1부터 절반까지만 사용하겠다
+        count = 1                                    # 반복되는 횟수
+        compress = 0
         
-        for i in range(size, len(s) + size, size): # size 만큼씩 step 하면서 자른다
-            curr = s[i : i + size]
-            
-            #------------------------------------------------------------------------------
-            if prev == curr:                       # 이전하고 같은 문자일 경우
-                count += 1                         # count += 1
-            else:
-                ompress += size + len(str(count)) if 1 < count else len(prev)
-                prev = curr
-                count = 1
+        prev = s[:size]
+        
+        for i in range(size, len(s) + size, size):   # 루프를 돌리는데, size만큼씩 돌린다, len(s) + size를 안해주면 마지막이 빠지게 됨 >>> 루프를 돌린 값은 i이다
+            curr = s[i:i + size]
+            if prev == curr:                         # 자른 것이 이전과 같으면
+                count += 1                           # count += 1
+                
+            else:                                    # 자른 것이 이전과 다르면
+                # 문자열 길이만 알면 된다 >>> size : 자른 문자열 길이 + count를 문자로 바꿨을때 길이
+                compress += size + len(str(count)) if 1 < count else len(prev) 
+                prev = curr                          # 문자 바꿔주기
+                count = 1                            # 카운트 초기화
                 
         answer = min(answer, compress)
-        
+    
     return answer
